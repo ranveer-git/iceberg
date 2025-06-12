@@ -17,6 +17,8 @@
   - under the License.
   -->
 
+# Apache Iceberg
+
 ![Iceberg](https://iceberg.apache.org/assets/images/Iceberg-logo.svg)
 
 [![](https://github.com/apache/iceberg/actions/workflows/java-ci.yml/badge.svg)](https://github.com/apache/iceberg/actions/workflows/java-ci.yml)
@@ -42,9 +44,11 @@ The core Java library is located in this repository and is the reference impleme
 
 ## Collaboration
 
-Iceberg tracks issues in GitHub and prefers to receive contributions as pull requests.
+Iceberg tracks issues in [GitHub](https://github.com/apache/iceberg) and prefers to receive contributions as pull requests.
 
 Community discussions happen primarily on the [dev mailing list][dev-list] or on specific issues.
+
+For detailed information on how to contribute, please see our [Contributing Guide](CONTRIBUTING.md).
 
 [dev-list]: mailto:dev@iceberg.apache.org
 
@@ -56,7 +60,7 @@ Iceberg is built using Gradle with Java 11, 17, or 21.
 * To invoke a build and run tests: `./gradlew build`
 * To skip tests: `./gradlew build -x test -x integrationTest`
 * To fix code style for default versions: `./gradlew spotlessApply`
-* To fix code style for all versions of Spark/Hive/Flink:`./gradlew spotlessApply -DallModules`
+* To fix code style for all versions of Spark/Hive/Flink: `./gradlew spotlessApply -DallModules`
 
 Iceberg table support is organized in library modules:
 
@@ -78,17 +82,18 @@ Iceberg also has modules for adding Iceberg support to processing engines:
 ---
 **NOTE**
 
-The tests require Docker to execute. On macOS (with Docker Desktop), you might need to create a symbolic name to the docker socket in order to be detected by the tests:
+The tests require Docker to execute. On macOS (with Docker Desktop), you might need to create a symbolic link to the docker socket in order to be detected by the tests:
 
-```
+```bash
 sudo ln -s $HOME/.docker/run/docker.sock /var/run/docker.sock
 ```
 ---
 
 ### Engine Compatibility
 
-See the [Multi-Engine Support](https://iceberg.apache.org/multi-engine-support/) page to know about Iceberg compatibility with different Spark, Flink and Hive versions.
-For other engines such as Presto or Trino, please visit their websites for Iceberg integration details.
+See the [Multi-Engine Support](https://iceberg.apache.org/multi-engine-support/) page to learn about Iceberg compatibility with different Spark, Flink and Hive versions.
+
+For other engines such as Presto or Trino, please visit their respective websites for Iceberg integration details.
 
 ### Implementations
 
